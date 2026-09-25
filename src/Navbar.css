@@ -1,56 +1,191 @@
-.navbar{
-    color: #fff;
-    background: #201f1f;
-    font-size: 20px;
-    /* width: 100%; */
-    height: 60px;
-    display: flex; 
+.navbar {
+    width: 100%;
+    height: 70px;
+
+    box-sizing: border-box;
+
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    cursor: pointer;
+
+    padding: 0 50px;
+
+    background: #111;
+    color: white;
+
+    border-bottom: 1px solid #292929;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    font-family: Arial, sans-serif;
 }
 
-/* logo css */
 
+/* ================= LOGO ================= */
 
+.logo h2 {
+    margin: 0;
 
-.logo h2{
-    color: #fff;
-    font-weight: 550;
+    color: white;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
 }
-.logo h2 span{
-    color: rgb(208, 208, 153);
+
+.logo h2 span {
+    color: #d0d099;
 }
-/* links */
-.links{
+
+
+/* ================= LINKS ================= */
+
+.nav-link {
     display: flex;
     align-items: center;
-    gap: 40px; 
-}
-/* nav-link css */
 
-.nav-link{
-    display: flex;
-    gap: 30px;
+    gap: 35px;
+
+    margin: 0;
+    padding: 0;
+
     list-style: none;
+}
+
+
+.nav-link a {
+    position: relative;
+
+    display: flex;
     align-items: center;
-    
-}
-.nav-link a{
+
+    height: 70px;
+
     text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-    font-size: 20px;
+
+    color: #999;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: color 0.25s ease;
 }
-.nav-link a:hover{
-    color: rgb(249, 73, 73);
-    text-decoration: underline;
-    text-underline-offset: 10px; 
+
+
+/* Hover */
+
+.nav-link a:hover {
+    color: white;
 }
 
 
+/* Underline animation */
+
+.nav-link a::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #d0d099;
+
+    transition: width 0.25s ease;
+}
 
 
+.nav-link a:hover::after {
+    width: 100%;
+}
 
+
+/* Active link */
+
+.nav-link a.active {
+    color: white;
+}
+
+
+.nav-link a.active::after {
+    width: 100%;
+}
+
+
+/* ================= PROFILE ================= */
+
+.nav-link .profile {
+    width: 38px;
+    height: 38px;
+
+    justify-content: center;
+
+    border: 1px solid #333;
+    border-radius: 50%;
+
+    background: #1c1c1c;
+
+    font-size: 16px;
+
+    transition: all 0.25s ease;
+}
+
+
+.nav-link .profile::after {
+    display: none;
+}
+
+
+.nav-link .profile:hover {
+    border-color: #666;
+
+    background: #292929;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-link {
+        gap: 18px;
+    }
+
+    .nav-link a {
+        font-size: 13px;
+    }
+
+    .logo h2 {
+        font-size: 19px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .nav-link {
+        gap: 12px;
+    }
+
+    .nav-link li:nth-child(2),
+    .nav-link li:nth-child(3) {
+        display: none;
+    }
+}
 

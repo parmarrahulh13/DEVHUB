@@ -1,19 +1,33 @@
 import "./Hero.css";
 
-function Hero({ name }) {
+function Hero() {
   return (
     <div className="Hero">
       <div className="title">
-        <h3>YOUR DEVELOPER RESOURCE HUB</h3>
-        
-        <p>Find tools, documentation and courses.</p>
+        <span className="badge">✦ DEVELOPER RESOURCE HUB</span>
+
+        <h1>
+          Everything you need
+          <br />
+          <span>to build better.</span>
+        </h1>
+
+        <p>
+          Find tools, documentation, courses and resources
+          <br />
+          to level up your development skills.
+        </p>
       </div>
 
-      <input type="text" placeholder="🔍 Search resources..." />
-      <ul>
-        <li>All</li>
-        <li>React </li>
-        <li>JavaScript </li>
+      <div className="search-box">
+        <span>⌕</span>
+        <input type="text" placeholder="Search resources..." />
+      </div>
+
+      <ul className="categories">
+        <li className="active">All</li>
+        <li>React</li>
+        <li>JavaScript</li>
         <li>CSS</li>
         <li>Tools</li>
       </ul>
